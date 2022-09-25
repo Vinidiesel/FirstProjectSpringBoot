@@ -1,6 +1,6 @@
 package com.example.source.services;
 
-import com.example.source.entities.Users;
+import com.example.source.entities.User;
 import com.example.source.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,12 +18,12 @@ public class UserService {
         this.repository = repository;
     }
 
-    public List<Users> findAll() {
+    public List<User> findAll() {
         return  repository.findAll();
     }
 
-    public Users findById(Long id){
-        Optional<Users> obj = repository.findById(id);
+    public User findById(Long id){
+        Optional<User> obj = repository.findById(id);
         return obj.get();
     }
 

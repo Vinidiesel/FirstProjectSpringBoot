@@ -1,8 +1,7 @@
 package com.example.source.resources;
 
-import com.example.source.entities.Users;
+import com.example.source.entities.User;
 import com.example.source.services.UserService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,14 +23,14 @@ public class UserResource {
     }
 
     @GetMapping
-    public ResponseEntity<List<Users>> findAll() {
-        List<Users> list = service.findAll();
+    public ResponseEntity<List<User>> findAll() {
+        List<User> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Users> findById(@PathVariable Long id){
-        Users obj = service.findById(id);
+    public ResponseEntity<User> findById(@PathVariable Long id){
+        User obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }
