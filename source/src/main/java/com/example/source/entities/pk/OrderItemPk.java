@@ -2,6 +2,7 @@ package com.example.source.entities.pk;
 
 import com.example.source.entities.Order;
 import com.example.source.entities.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
