@@ -4,6 +4,7 @@ import com.example.source.entities.Product;
 import com.example.source.entities.User;
 import com.example.source.repository.ProductRepository;
 import com.example.source.repository.UserRepository;
+import com.example.source.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class ProductService {
 
     public Product findById(Long id){
         Optional<Product> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(()-> new ResourceNotFoundException(id));
     }
 
 }
